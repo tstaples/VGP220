@@ -16,6 +16,10 @@ bld/
 [Bb]in/
 [Oo]bj/
 
+# Output and intermediate paths
+bin/*
+build/*
+
 # MSTest test Results
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
