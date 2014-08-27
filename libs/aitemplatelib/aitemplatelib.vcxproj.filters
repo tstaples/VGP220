@@ -6,6 +6,9 @@
     <ClInclude Include="array2.h" />
     <ClInclude Include="binarytree.h" />
     <ClInclude Include="bitvector.h" />
+    <ClInclude Include="stack.h" />
+    <ClInclude Include="queue.h" />
+    <ClInclude Include="node.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bitvector.cpp" />

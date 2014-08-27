@@ -5,5 +5,7 @@
 #include "array2.h"
 #include "binarytree.h"
 #include "bitvector.h"
+#include "stack.h"
+#include "queue.h"
 
 #endif

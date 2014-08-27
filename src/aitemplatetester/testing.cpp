@@ -6,6 +6,8 @@ bool testArray();
 bool testArray2();
 bool testBinaryTree();
 bool testBitVector();
+bool testStack();
+bool testQueue();
 
 int main()
 {
@@ -53,6 +55,27 @@ int main()
 	{
 		std::cout << "Test failed\n";
 	}
+
+	std::cout << "Testing Stack...\n";
+	if (testStack())
+	{
+		std::cout << "Test sucessful!\n";
+	}
+	else
+	{
+		std::cout << "Test failed\n";
+	}
+
+	std::cout << "Testing Queue...\n";
+	if (testQueue())
+	{
+		std::cout << "Test sucessful!\n";
+	}
+	else
+	{
+		std::cout << "Test failed\n";
+	}
+
 
 	return 0;
 }
@@ -217,5 +240,33 @@ bool testBitVector()
 	bv.Clear();
 	bv2.Clear();
 
+	return true;
+}
+
+bool testStack()
+{
+	Stack<int> myStack;
+	myStack.Push(1);
+	myStack.Push(2);
+	myStack.Push(3);
+
+	assert(myStack.Top() == 3);
+
+	myStack.Pop();
+	assert(myStack.Top() == 2);
+	return true;
+}
+
+bool testQueue()
+{
+	Queue<int> myQ;
+	myQ.Enqueue(1);
+	myQ.Enqueue(2);
+	myQ.Enqueue(3);
+
+	assert(myQ.Front() == 1);
+
+	myQ.Dequeue();
+	assert(myQ.Front() == 2);
 	return true;
 }
