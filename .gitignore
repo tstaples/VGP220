@@ -11,14 +11,10 @@
 [Dd]ebugPublic/
 [Rr]elease/
 x64/
-build/
-bld/
-[Bb]in/
-[Oo]bj/
-
-# Output and intermediate paths
-bin/*
 build/*
+bld/
+[Bb]in/*
+[Oo]bj/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
