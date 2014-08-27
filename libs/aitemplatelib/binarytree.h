@@ -77,6 +77,10 @@ BinaryTree<T>::BinaryTree(const BinaryTree& rhs)
 template< typename T >
 BinaryTree<T>& BinaryTree<T>::operator=(const BinaryTree& rhs)
 {
+	if (this != &rhs)
+	{
+	}
+	return *this;
 }
 // ------------------------------------------------------------------------
 
