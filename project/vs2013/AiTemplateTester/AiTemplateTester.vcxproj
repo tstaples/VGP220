@@ -19,7 +19,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\src\aitemplatetester\ReversePolish.cpp" />
     <ClCompile Include="..\..\..\src\aitemplatetester\testing.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\aitemplatetester\ReversePolish.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{B9915A96-3E69-40FA-854F-55A4723444AF}</ProjectGuid>

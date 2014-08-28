@@ -9,6 +9,8 @@ class Queue
 public:
 	Queue();
 	~Queue();
+	Queue(const Queue& rhs);
+	Queue& operator=(const Queue& rhs);
 
 	void Enqueue(const T& val);
 	void Dequeue();
@@ -19,17 +21,47 @@ private:
 	Node<T>* mFront;
 };
 
+// ------------------------------------------------------------------------
+// ------------------------------------------------------------------------
+
+
 template< typename T >
 Queue<T>::Queue()
 	:	mFront( nullptr )
 {
 }
+// ------------------------------------------------------------------------
 
 template< typename T >
 Queue<T>::~Queue()
 {
 }
+// ------------------------------------------------------------------------
 
+template< typename T >
+Queue<T>::Queue(const Queue& rhs)
+	:	mFront(nullptr)
+{
+	*this = rhs;
+}
+// ------------------------------------------------------------------------
+
+template< typename T >
+Queue<T>& Queue<T>::operator=(const Queue& rhs)
+{
+	if (this != &rhs)
+	{
+		Node<T>* temp = rhs.mFront;
+		while (temp)
+		{
+			// Traverse source Queue and push the values to the local Q.
+			Enqueue(temp->mData);
+			temp = temp->mNext;
+		}
+	}
+	return *this;
+}
+// ------------------------------------------------------------------------
 
 template< typename T >
 void Queue<T>::Enqueue(const T& val)
@@ -49,6 +81,7 @@ void Queue<T>::Enqueue(const T& val)
 		mFront = new Node<T>(val);
 	}
 }
+// ------------------------------------------------------------------------
 
 template< typename T >
 void Queue<T>::Dequeue()
@@ -61,6 +94,7 @@ void Queue<T>::Dequeue()
 		temp = nullptr;
 	}
 }
+// ------------------------------------------------------------------------
 
 template< typename T >
 const T& Queue<T>::Front() const

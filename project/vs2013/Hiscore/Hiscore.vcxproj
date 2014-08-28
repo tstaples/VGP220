@@ -84,7 +84,6 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\src\hiscore\HighScoreTable.cpp" />
     <ClCompile Include="..\..\..\src\hiscore\Main.cpp" />
-    <ClCompile Include="..\..\..\src\hiscore\Score.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\hiscore\HighScoreTable.h" />

@@ -1,4 +1,5 @@
 #include "aitl.h"
+#include "ReversePolish.h"
 
 #include <iostream>
 
@@ -8,6 +9,8 @@ bool testBinaryTree();
 bool testBitVector();
 bool testStack();
 bool testQueue();
+
+bool testReversePolish();
 
 int main()
 {
@@ -68,6 +71,16 @@ int main()
 
 	std::cout << "Testing Queue...\n";
 	if (testQueue())
+	{
+		std::cout << "Test sucessful!\n";
+	}
+	else
+	{
+		std::cout << "Test failed\n";
+	}
+
+	std::cout << "Testing ReversePolish...\n";
+	if (testReversePolish())
 	{
 		std::cout << "Test sucessful!\n";
 	}
@@ -254,6 +267,12 @@ bool testStack()
 
 	myStack.Pop();
 	assert(myStack.Top() == 2);
+
+	Stack<int> myStackcopy(myStack);
+	assert(myStackcopy.Top() == 2);
+	myStackcopy.Pop();
+	assert(myStackcopy.Top() == 1);
+
 	return true;
 }
 
@@ -268,5 +287,54 @@ bool testQueue()
 
 	myQ.Dequeue();
 	assert(myQ.Front() == 2);
+
+	Queue<int> myQcopy(myQ);
+	assert(myQcopy.Front() == 2);
+	myQcopy.Dequeue();
+	assert(myQcopy.Front() == 3);
+
+	return true;
+}
+
+bool testReversePolish()
+{
+	ReversePolish myrp;
+
+	// 5, 1, 2, +, 4, ×, +, 3, –			( 5 + ( ( 1 + 2 ) * 4 ) – 3
+	std::cout << "Running equation: ( 5 + ( ( 1 + 2 ) * 4 ) – 3\n";
+	myrp.AddNumber(5);
+	myrp.AddNumber(1);
+	myrp.AddNumber(2);
+	myrp.AddSymbol('+');
+	myrp.AddNumber(4);
+	myrp.AddSymbol('*');
+	myrp.AddSymbol('+');
+	myrp.AddNumber(3);
+	myrp.AddSymbol('-');
+	assert(myrp.GetResult() == 14.0f);
+	std::cout << "Test passed\n";
+
+	// 4, 13, 5, /, +				( 4 + ( 13 / 5 ) )
+	std::cout << "Running equation: ( 4 + ( 13 / 5 ) )\n";
+	myrp.AddNumber(4);
+	myrp.AddNumber(13);
+	myrp.AddNumber(5);
+	myrp.AddSymbol('/');
+	myrp.AddSymbol('+');
+	assert(myrp.GetResult() == 6.6f);
+	std::cout << "Test passed\n";
+
+	// 3, 4, +, 5, 6, +, *			( ( 3 + 4 ) * ( 5 + 6 ) )
+	std::cout << "Running equation: ( ( 3 + 4 ) * ( 5 + 6 ) )\n";
+	myrp.AddNumber(3);
+	myrp.AddNumber(4);
+	myrp.AddSymbol('+');
+	myrp.AddNumber(5);
+	myrp.AddNumber(6);
+	myrp.AddSymbol('+');
+	myrp.AddSymbol('*');
+	assert(myrp.GetResult() == 77.0f);
+	std::cout << "Test passed\n";
+
 	return true;
 }

@@ -7,8 +7,9 @@
 class Score
 {
 public:
-	Score( std::string& name, int score );
-	~Score();
+	Score( std::string& name, int score )
+		:	mName( name ) ,	mScore( score ) {}
+	~Score() {}
 
 	inline int GetScore() const { return mScore; }
 	inline std::string GetName() const { return mName; }
