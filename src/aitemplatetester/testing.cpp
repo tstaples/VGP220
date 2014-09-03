@@ -14,6 +14,8 @@ bool testReversePolish();
 
 int main()
 {
+
+
 	// TODO: have main take cmd line args which determine which tests to run.
 	// This way we can create a toolbar button which runs a bat file calling this
 	// with the appropriate args.

@@ -7,5 +7,6 @@
 #include "bitvector.h"
 #include "stack.h"
 #include "queue.h"
+#include "HashTable.h"
 
 #endif

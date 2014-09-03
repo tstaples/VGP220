@@ -9,6 +9,7 @@
     <ClInclude Include="stack.h" />
     <ClInclude Include="queue.h" />
     <ClInclude Include="node.h" />
+    <ClInclude Include="HashTable.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bitvector.cpp" />
