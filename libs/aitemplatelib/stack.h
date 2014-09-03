@@ -2,6 +2,7 @@
 #define INCLUDED_STACK_H
 
 #include "node.h"
+#include <assert.h>
 #include <vector>
 
 template< typename T >
@@ -97,11 +98,9 @@ void Stack<T>::Pop()
 template< typename T >
 const T& Stack<T>::Top() const
 {
-	if (mTop)
-	{
-		return mTop->mData;
-	}
-	return 0;
+	// Assert top of stack is invalid
+	assert(mTop);
+	return mTop->mData;
 }
 
 #endif
