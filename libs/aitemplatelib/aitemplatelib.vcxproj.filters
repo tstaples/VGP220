@@ -9,9 +9,28 @@
     <ClInclude Include="stack.h" />
     <ClInclude Include="queue.h" />
     <ClInclude Include="node.h" />
-    <ClInclude Include="HashTable.h" />
+    <ClInclude Include="HashTable.h">
+      <Filter>HashTable</Filter>
+    </ClInclude>
+    <ClInclude Include="Hash.h">
+      <Filter>HashTable</Filter>
+    </ClInclude>
+    <ClInclude Include="Bucket.h">
+      <Filter>HashTable</Filter>
+    </ClInclude>
+    <ClInclude Include="pairtree.h">
+      <Filter>HashTable</Filter>
+    </ClInclude>
+    <ClInclude Include="Entry.h">
+      <Filter>HashTable</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bitvector.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="HashTable">
+      <UniqueIdentifier>{2a2b2718-6d89-4603-b725-c84620b351f6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

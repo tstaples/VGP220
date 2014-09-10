@@ -3,6 +3,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\src\aitemplatetester\ReversePolish.cpp" />
     <ClCompile Include="..\..\..\src\aitemplatetester\testing.cpp" />
+    <ClCompile Include="..\..\..\src\aitemplatetester\HashTableTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\aitemplatetester\ReversePolish.h" />

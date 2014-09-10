@@ -21,8 +21,12 @@
     <ClInclude Include="array2.h" />
     <ClInclude Include="binarytree.h" />
     <ClInclude Include="bitvector.h" />
+    <ClInclude Include="Bucket.h" />
+    <ClInclude Include="Entry.h" />
+    <ClInclude Include="Hash.h" />
     <ClInclude Include="HashTable.h" />
     <ClInclude Include="node.h" />
+    <ClInclude Include="pairtree.h" />
     <ClInclude Include="queue.h" />
     <ClInclude Include="stack.h" />
   </ItemGroup>

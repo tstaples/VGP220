@@ -1,100 +1,117 @@
 #ifndef INCLUDED_HASHTABLE_H
 #define INCLUDED_HASHTABLE_H
 
-#include "binarytree.h"
+//#include "Bucket.h"
+#include <vector>
+#include "Entry.h"
+#include "pairtree.h"
+#include "Hash.h"
 
 
-template <typename T>
+template <typename TKey, typename TVal>
 class HashTable
 {
-public:
 	typedef unsigned long Key;
+private:
+	typedef typename std::vector<PairTree<Entry<TVal>>> BucketList;
+	//typedef std::pair<Key, TVal> KeyPair;
 
-	struct Entry
-	{
-		Key mKey;
-		T mValue;
-	};
-
+public:
 	HashTable(unsigned int size);
 	HashTable(const HashTable& rhs);
 	~HashTable();
 
 	void Clear();
 
-	void Insert(const Key& key, const T& value);
-	void Remove(const Key& key);
+	// Inserts a new key-val pair in to a bucket
+	void Insert(const TKey& key, const TVal& value);
+	void Remove(const TKey& key);
 
-	Entry* Find(const Key& key);
+	// Returns the value paired with the key
+	TVal* Find(const TKey& key);
 
 	unsigned int Size() const;
 
 	HashTable& operator=(const HashTable& rhs);
 
 private:
-	BinaryTree<Entry> mHashTree;
-	unsigned int mSize;
+	BucketList mBucketList;
+	unsigned int mSize;	// Number of buckets
 };
 
 // ------------------------------------------------------------
+// ------------------------------------------------------------
 
-template <typename T>
-HashTable<T>::HashTable(unsigned int size)
+template <typename TKey, typename TVal>
+HashTable<TKey, TVal>::HashTable(unsigned int size)
 	:	mSize(size)
+{
+	mBucketList.resize(size);
+}
+// ------------------------------------------------------------
+
+template <typename TKey, typename TVal>
+HashTable<TKey, TVal>::HashTable(const HashTable& rhs)
+{
+}
+// ------------------------------------------------------------
+
+template <typename TKey, typename TVal>
+HashTable<TKey, TVal>::~HashTable()
+{
+}
+// ------------------------------------------------------------
+
+template <typename TKey, typename TVal>
+void HashTable<TKey, TVal>::Clear()
 {
 	for (int i=0; i < mSize; ++i)
 	{
-		Entry myEntry;
-		myEntry.mKey = NULL;
-		myEntry.mValue = nullptr;
-		mHashTree.Insert(myEntry);
+		mBucketList[i].Clear();
 	}
+	mBucketList.clear();
 }
+// ------------------------------------------------------------
 
-template <typename T>
-HashTable<T>::HashTable(const HashTable& rhs)
+template <typename TKey, typename TVal>
+void HashTable<TKey, TVal>::Insert(const TKey& key, const TVal& value)
 {
-}
+	// Convert the raw key to its hash value
+	Hash<TKey> hash(key);
+	unsigned int bucketIndex = hash.Key() % mSize;
+	Entry entry(key, value);
 
-template <typename T>
-HashTable<T>::~HashTable()
-{
+	// Insert the pair
+	mBucketList.at(bucketIndex).Insert(entry);
 }
+// ------------------------------------------------------------
 
-template <typename T>
-void HashTable<T>::Clear()
-{
-	mHashTree.Clear();
-}
-
-template <typename T>
-void HashTable<T>::Insert(const Key& key, const T& value)
-{
-	Entry entry;
-	entry.mKey = key;
-	entry.mValue = value;
-	mHashTree.Insert(entry);
-	++mSize;
-}
-
-template <typename T>
-void HashTable<T>::Remove(const Key& key)
+template <typename TKey, typename TVal>
+void HashTable<TKey, TVal>::Remove(const TKey& key)
 {
 	// TODO
 	--mSize;
 }
+// ------------------------------------------------------------
 
 
-template <typename T>
-typename HashTable<T>::Entry* HashTable<T>::Find(const Key& key)
+template <typename TKey, typename TVal>
+TVal* HashTable<TKey, TVal>::Find(const TKey& key)
 {
-}
+	Hash<TKey> hash(key);
+	unsigned int bucketIndex = hash.Key() % mSize;
 
-template <typename T>
-unsigned int HashTable<T>::Size() const
+	 return mBucketList[bucketIndex].Find(hash.Key());
+
+}
+// ------------------------------------------------------------
+
+template <typename TKey, typename TVal>
+unsigned int HashTable<TKey, TVal>::Size() const
 {
 	return mSize;
 }
+// ------------------------------------------------------------
 
 #endif
 

@@ -12,88 +12,88 @@ bool testQueue();
 
 bool testReversePolish();
 
-int main()
-{
-
-
-	// TODO: have main take cmd line args which determine which tests to run.
-	// This way we can create a toolbar button which runs a bat file calling this
-	// with the appropriate args.
-
-
-	std::cout << "Testing Array...\n";
-	if (testArray())
-	{
-		std::cout << "Test sucessful!\n";
-	}
-	else
-	{
-		std::cout << "Test failed\n";
-	}
-
-	std::cout << "Testing Array2...\n";
-	if (testArray2())
-	{
-		std::cout << "Test sucessful!\n";
-	}
-	else
-	{
-		std::cout << "Test failed\n";
-	}
-
-	//std::cout << "Testing BitVector...\n";
-	//if (testBitVector())
-	//{
-	//	std::cout << "Test sucessful!\n";
-	//}
-	//else
-	//{
-	//	std::cout << "Test failed\n";
-	//}
-
-	std::cout << "Testing BinaryTree...\n";
-	if (testBinaryTree())
-	{
-		std::cout << "Test sucessful!\n";
-	}
-	else
-	{
-		std::cout << "Test failed\n";
-	}
-
-	std::cout << "Testing Stack...\n";
-	if (testStack())
-	{
-		std::cout << "Test sucessful!\n";
-	}
-	else
-	{
-		std::cout << "Test failed\n";
-	}
-
-	std::cout << "Testing Queue...\n";
-	if (testQueue())
-	{
-		std::cout << "Test sucessful!\n";
-	}
-	else
-	{
-		std::cout << "Test failed\n";
-	}
-
-	std::cout << "Testing ReversePolish...\n";
-	if (testReversePolish())
-	{
-		std::cout << "Test sucessful!\n";
-	}
-	else
-	{
-		std::cout << "Test failed\n";
-	}
-
-
-	return 0;
-}
+//int main()
+//{
+//
+//
+//	// TODO: have main take cmd line args which determine which tests to run.
+//	// This way we can create a toolbar button which runs a bat file calling this
+//	// with the appropriate args.
+//
+//
+//	std::cout << "Testing Array...\n";
+//	if (testArray())
+//	{
+//		std::cout << "Test sucessful!\n";
+//	}
+//	else
+//	{
+//		std::cout << "Test failed\n";
+//	}
+//
+//	std::cout << "Testing Array2...\n";
+//	if (testArray2())
+//	{
+//		std::cout << "Test sucessful!\n";
+//	}
+//	else
+//	{
+//		std::cout << "Test failed\n";
+//	}
+//
+//	//std::cout << "Testing BitVector...\n";
+//	//if (testBitVector())
+//	//{
+//	//	std::cout << "Test sucessful!\n";
+//	//}
+//	//else
+//	//{
+//	//	std::cout << "Test failed\n";
+//	//}
+//
+//	std::cout << "Testing BinaryTree...\n";
+//	if (testBinaryTree())
+//	{
+//		std::cout << "Test sucessful!\n";
+//	}
+//	else
+//	{
+//		std::cout << "Test failed\n";
+//	}
+//
+//	std::cout << "Testing Stack...\n";
+//	if (testStack())
+//	{
+//		std::cout << "Test sucessful!\n";
+//	}
+//	else
+//	{
+//		std::cout << "Test failed\n";
+//	}
+//
+//	std::cout << "Testing Queue...\n";
+//	if (testQueue())
+//	{
+//		std::cout << "Test sucessful!\n";
+//	}
+//	else
+//	{
+//		std::cout << "Test failed\n";
+//	}
+//
+//	std::cout << "Testing ReversePolish...\n";
+//	if (testReversePolish())
+//	{
+//		std::cout << "Test sucessful!\n";
+//	}
+//	else
+//	{
+//		std::cout << "Test failed\n";
+//	}
+//
+//
+//	return 0;
+//}
 
 bool testArray()
 {

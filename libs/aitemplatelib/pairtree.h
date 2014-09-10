@@ -1,25 +1,28 @@
-#ifndef INCLUDED_BINARYTREE_H
-#define INCLUDED_BINARYTREE_H
+#ifndef INCLUDED_PAIRTREE_H
+#define INCLUDED_PAIRTREE_H
 
-template< typename T >
-class BinaryTree
+template<typename TVal>
+class PairTree
 {
+	typedef unsigned long Key;
 public:
+
 	struct Node
 	{
-		T mData;
+		Key mKey;
+		TVal mData;
 		Node* mLeft;
 		Node* mRight;
 	};
 
-	BinaryTree();
-	BinaryTree(const BinaryTree& rhs);
-	~BinaryTree();
+	PairTree();
+	PairTree(const PairTree& rhs);
+	~PairTree();
 
 	void Clear();
-	void Insert(const T& val);
-	void Remove(const T& val);
-	const Node* Find(const T& val);
+	void Insert(const Key& key, const TVal& val);
+	void Remove(const Key& key);
+	const Node* Find(const Key& key);
 
 	void PreOrder() const;
 	void InOrder() const;
@@ -28,15 +31,15 @@ public:
 	unsigned int Size() const;
 	unsigned int Depth() const;
 
-	BinaryTree& operator=(const BinaryTree& rhs);
+	PairTree& operator=(const PairTree& rhs);
 
 private:
 
 	void Clear(Node* node);
 
-	void Insert(Node* node, const T& val);
-	void Remove(Node* node, const T& val);
-	const Node* Find(Node* node, const T& val);
+	void Insert(Node* node, const Key& key, const TVal& val);
+	void Remove(Node* node, const Key& key);
+	const Node* Find(Node* node, const Key& key);
 
 	void PreOrder(Node* node) const;
 	void InOrder(Node* node) const;
@@ -56,27 +59,27 @@ private:
 // ------------------------------------------------------------------------
 
 
-template< typename T >
-BinaryTree<T>::BinaryTree()
+template<typename TVal>
+PairTree<TVal>::PairTree()
 : mRoot(nullptr)
 {
 }
 // ------------------------------------------------------------------------
 
-template< typename T >
-BinaryTree<T>::~BinaryTree()
+template<typename TVal>
+PairTree<TVal>::~PairTree()
 {
 }
 // ------------------------------------------------------------------------
 
-template< typename T >
-BinaryTree<T>::BinaryTree(const BinaryTree& rhs)
+template<typename TVal>
+PairTree<TVal>::PairTree(const PairTree& rhs)
 {
 }
 // ------------------------------------------------------------------------
 
-template< typename T >
-BinaryTree<T>& BinaryTree<T>::operator=(const BinaryTree& rhs)
+template<typename TVal>
+PairTree<TVal>& PairTree<TVal>::operator=(const PairTree& rhs)
 {
 	if (this != &rhs)
 	{
@@ -85,73 +88,74 @@ BinaryTree<T>& BinaryTree<T>::operator=(const BinaryTree& rhs)
 }
 // ------------------------------------------------------------------------
 
-template< typename T >
-void BinaryTree<T>::Clear()
+template<typename TVal>
+void PairTree<TVal>::Clear()
 {
 	Clear(mRoot);
 }
 // ------------------------------------------------------------------------
 
-template< typename T >
-void BinaryTree<T>::Insert(const T& val)
+template<typename TVal>
+void PairTree<TVal>::Insert(const Key& key, const TVal& val)
 {
 	if (mRoot == nullptr)
 	{
 		mRoot = new Node();
+		mRoot->mKey = key;
 		mRoot->mData = val;
 		mRoot->mRight = nullptr;
 		mRoot->mLeft = nullptr;
 	}
 	else
 	{
-		Insert(mRoot, val);
+		Insert(mRoot, key, val);
 	}
 }
 // ------------------------------------------------------------------------
 
-template< typename T >
-void BinaryTree<T>::Remove(const T& val)
+template<typename TVal>
+void PairTree<TVal>::Remove(const Key& key)
 {}
 
 // ------------------------------------------------------------------------
 
-template< typename T >
-const typename BinaryTree<T>::Node* BinaryTree<T>::Find(const T& val)
+template<typename TVal>
+const typename PairTree<TVal>::Node* PairTree<TVal>::Find(const Key& key)
 {
-	return (Find(mRoot, val));
+	return (Find(mRoot, key));
 }
 // ------------------------------------------------------------------------
 
-template< typename T >
-void BinaryTree<T>::PreOrder() const
+template<typename TVal>
+void PairTree<TVal>::PreOrder() const
 {
 	PreOrder(mRoot);
 }
 // ------------------------------------------------------------------------
 
-template< typename T >
-void BinaryTree<T>::InOrder() const
+template<typename TVal>
+void PairTree<TVal>::InOrder() const
 {
 	InOrder(mRoot);
 }
 // ------------------------------------------------------------------------
 
-template< typename T >
-void BinaryTree<T>::PostOrder() const
+template<typename TVal>
+void PairTree<TVal>::PostOrder() const
 {
 	PostOrder(mRoot);
 }
 // ------------------------------------------------------------------------
 
-template< typename T >
-unsigned int BinaryTree<T>::Size() const
+template<typename TVal>
+unsigned int PairTree<TVal>::Size() const
 {
 	return Size(mRoot);
 }
 // ------------------------------------------------------------------------
 
-template< typename T >
-unsigned int BinaryTree<T>::Depth() const
+template<typename TVal>
+unsigned int PairTree<TVal>::Depth() const
 {
 	return (Depth(mRoot));
 }
@@ -161,8 +165,8 @@ unsigned int BinaryTree<T>::Depth() const
 // PRIVATE
 // ------------------------------------------------------------------------
 
-template< typename T >
-void BinaryTree<T>::Clear(Node* node)
+template<typename TVal>
+void PairTree<TVal>::Clear(Node* node)
 {
 	if (node != nullptr)
 	{
@@ -173,18 +177,19 @@ void BinaryTree<T>::Clear(Node* node)
 }
 // ------------------------------------------------------------------------
 
-template< typename T >
-void BinaryTree<T>::Insert(Node* node, const T& val)
+template<typename TVal>
+void PairTree<TVal>::Insert(Node* node, const Key& key, const TVal &val)
 {
-	if (val < node->mData)
+	if (key < node->mData)
 	{
 		if (node->mLeft != nullptr)
 		{
-			Insert(node->mLeft, val);
+			Insert(node->mLeft, key, val);
 		}
 		else
 		{
 			node->mLeft = new Node();
+			node->mLeft->mKey = key;
 			node->mLeft->mData = val;
 			node->mLeft->mLeft = nullptr;
 			node->mLeft->mRight = nullptr;
@@ -194,11 +199,12 @@ void BinaryTree<T>::Insert(Node* node, const T& val)
 	{
 		if (node->mRight != nullptr)
 		{
-			Insert(node->mRight, val);
+			Insert(node->mRight, key, val);
 		}
 		else
 		{
 			node->mRight = new Node();
+			node->mRight->mKey = key;
 			node->mRight->mData = val;
 			node->mRight->mLeft = nullptr;
 			node->mRight->mRight = nullptr;
@@ -207,8 +213,8 @@ void BinaryTree<T>::Insert(Node* node, const T& val)
 }
 // ------------------------------------------------------------------------
 
-template< typename T >
-void BinaryTree<T>::Remove(Node* node, const T& val)
+template<typename TVal>
+void PairTree<TVal>::Remove(Node* node, const Key& key)
 {
 	if (node)
 	{
@@ -252,30 +258,30 @@ void BinaryTree<T>::Remove(Node* node, const T& val)
 }
 // ------------------------------------------------------------------------
 
-template< typename T >
-const typename BinaryTree<T>::Node* BinaryTree<T>::Find(typename BinaryTree<T>::Node* node, const T& val)
+template<typename TVal>
+const typename PairTree<TVal>::Node* PairTree<TVal>::Find(Node* node, const Key& key)
 {
 	if (node != nullptr)
 	{
-		if (node->mData == val)
+		if (node->mKey == key)
 		{
 			return node;
 		}
-		else if (val < node->mData)
+		else if (key < node->mKey)
 		{
-			return Find(node->mLeft, val);
+			return Find(node->mLeft, key);
 		}
-		else if (val > node->mData)
+		else if (key > node->mKey)
 		{
-			return Find(node->mRight, val);
+			return Find(node->mRight, key);
 		}
 	}
 	return nullptr;
 }
 // ------------------------------------------------------------------------
 
-template< typename T >
-void BinaryTree<T>::PreOrder(Node* node) const
+template<typename TVal>
+void PairTree<TVal>::PreOrder(Node* node) const
 {
 	if (node)
 	{
@@ -286,8 +292,8 @@ void BinaryTree<T>::PreOrder(Node* node) const
 }
 // ------------------------------------------------------------------------
 
-template< typename T >
-void BinaryTree<T>::InOrder(Node* node) const
+template<typename TVal>
+void PairTree<TVal>::InOrder(Node* node) const
 {
 	if (node)
 	{
@@ -298,8 +304,8 @@ void BinaryTree<T>::InOrder(Node* node) const
 }
 // ------------------------------------------------------------------------
 
-template< typename T >
-void BinaryTree<T>::PostOrder(Node* node) const
+template<typename TVal>
+void PairTree<TVal>::PostOrder(Node* node) const
 {
 	if (node)
 	{
@@ -310,8 +316,8 @@ void BinaryTree<T>::PostOrder(Node* node) const
 }
 // ------------------------------------------------------------------------
 
-template< typename T >
-unsigned int BinaryTree<T>::Size(Node* node) const
+template<typename TVal>
+unsigned int PairTree<TVal>::Size(Node* node) const
 {
 	if (node != nullptr)
 	{
@@ -323,8 +329,8 @@ unsigned int BinaryTree<T>::Size(Node* node) const
 
 // ------------------------------------------------------------------------
 
-template< typename T >
-unsigned int BinaryTree<T>::Depth(Node* node) const
+template<typename TVal>
+unsigned int PairTree<TVal>::Depth(Node* node) const
 {
 	if (node != nullptr)
 	{
@@ -335,8 +341,8 @@ unsigned int BinaryTree<T>::Depth(Node* node) const
 	return 0;
 }
 
-template< typename T >
-typename BinaryTree<T>::Node* BinaryTree<T>::Clone(Node* node)
+template<typename TVal>
+typename PairTree<TVal>::Node* PairTree<TVal>::Clone(Node* node)
 {
 	return node;
 }

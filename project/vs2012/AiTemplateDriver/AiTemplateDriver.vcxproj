@@ -82,6 +82,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\src\aitemplatetester\HashTableTest.cpp" />
     <ClCompile Include="..\..\..\src\aitemplatetester\ReversePolish.cpp" />
     <ClCompile Include="..\..\..\src\aitemplatetester\testing.cpp" />
   </ItemGroup>
