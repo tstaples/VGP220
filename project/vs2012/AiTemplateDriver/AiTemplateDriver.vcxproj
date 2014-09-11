@@ -82,12 +82,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\src\aitemplatetester\Array2Test.cpp" />
+    <ClCompile Include="..\..\..\src\aitemplatetester\ArrayTest.cpp" />
+    <ClCompile Include="..\..\..\src\aitemplatetester\BinaryTreeTest.cpp" />
+    <ClCompile Include="..\..\..\src\aitemplatetester\BitVectorTest.cpp" />
     <ClCompile Include="..\..\..\src\aitemplatetester\HashTableTest.cpp" />
+    <ClCompile Include="..\..\..\src\aitemplatetester\PriorityQueueTest.cpp" />
+    <ClCompile Include="..\..\..\src\aitemplatetester\QueueTest.cpp" />
     <ClCompile Include="..\..\..\src\aitemplatetester\ReversePolish.cpp" />
-    <ClCompile Include="..\..\..\src\aitemplatetester\testing.cpp" />
+    <ClCompile Include="..\..\..\src\aitemplatetester\ReversePolishTest.cpp" />
+    <ClCompile Include="..\..\..\src\aitemplatetester\StackTest.cpp" />
+    <ClCompile Include="..\..\..\src\aitemplatetester\Tests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\aitemplatetester\ReversePolish.h" />
+    <ClInclude Include="..\..\..\src\aitemplatetester\Tests.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\libs\aicorelib\aicorelib.vcxproj">

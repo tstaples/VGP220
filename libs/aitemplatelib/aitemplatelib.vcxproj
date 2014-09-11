@@ -27,11 +27,13 @@
     <ClInclude Include="HashTable.h" />
     <ClInclude Include="node.h" />
     <ClInclude Include="pairtree.h" />
+    <ClInclude Include="priorityqueue.h" />
     <ClInclude Include="queue.h" />
     <ClInclude Include="stack.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bitvector.cpp" />
+    <ClCompile Include="priorityqueue.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{9B147F91-8F20-4E37-9FB7-344D1EF9272A}</ProjectGuid>

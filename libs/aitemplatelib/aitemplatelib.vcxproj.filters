@@ -24,9 +24,11 @@
     <ClInclude Include="Entry.h">
       <Filter>HashTable</Filter>
     </ClInclude>
+    <ClInclude Include="priorityqueue.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bitvector.cpp" />
+    <ClCompile Include="priorityqueue.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="HashTable">
