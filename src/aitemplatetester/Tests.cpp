@@ -13,14 +13,13 @@ int main()
 	// with the appropriate args.
 
 	Tests_map tests;
-	//tests.insert(std::make_pair("Array", &testArray));
-	//tests.insert(std::make_pair("Array2", &testArray2));
-	//tests.insert(std::make_pair("BinaryTree", &testBinaryTree));
-	//tests.insert(std::make_pair("BitVector", &testBitVector));
-	//tests.insert(std::make_pair("Stack", &testStack));
-	//tests.insert(std::make_pair("Queue", &testQueue));
-	//tests.insert(std::make_pair("ReversePolish", &testReversePolish));
-	//tests.insert(std::make_pair("HashTable", &testHashTable));
+	tests.insert(std::make_pair("Array", &testArray));
+	tests.insert(std::make_pair("Array2", &testArray2));
+	tests.insert(std::make_pair("BinaryTree", &testBinaryTree));
+	tests.insert(std::make_pair("BitVector", &testBitVector));
+	tests.insert(std::make_pair("Stack", &testStack));
+	tests.insert(std::make_pair("Queue", &testQueue));
+	tests.insert(std::make_pair("ReversePolish", &testReversePolish));
 	tests.insert(std::make_pair("PriorityQueue", &testPriorityQueue));
 
 	Tests_map::iterator it = tests.begin();

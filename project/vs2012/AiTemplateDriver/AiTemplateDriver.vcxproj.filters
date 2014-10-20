@@ -6,9 +6,6 @@
     <ClCompile Include="..\..\..\src\aitemplatetester\PriorityQueueTest.cpp">
       <Filter>Tests</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\src\aitemplatetester\HashTableTest.cpp">
-      <Filter>Tests</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\src\aitemplatetester\Array2Test.cpp">
       <Filter>Tests</Filter>
     </ClCompile>

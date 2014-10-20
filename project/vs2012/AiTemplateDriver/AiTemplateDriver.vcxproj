@@ -56,7 +56,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\libs\aitemplatelib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\src\aitemplatelib\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -72,7 +72,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\libs\aitemplatelib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\src;..\..\..\src\aitemplatelib\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -86,7 +86,6 @@
     <ClCompile Include="..\..\..\src\aitemplatetester\ArrayTest.cpp" />
     <ClCompile Include="..\..\..\src\aitemplatetester\BinaryTreeTest.cpp" />
     <ClCompile Include="..\..\..\src\aitemplatetester\BitVectorTest.cpp" />
-    <ClCompile Include="..\..\..\src\aitemplatetester\HashTableTest.cpp" />
     <ClCompile Include="..\..\..\src\aitemplatetester\PriorityQueueTest.cpp" />
     <ClCompile Include="..\..\..\src\aitemplatetester\QueueTest.cpp" />
     <ClCompile Include="..\..\..\src\aitemplatetester\ReversePolish.cpp" />
@@ -99,10 +98,7 @@
     <ClInclude Include="..\..\..\src\aitemplatetester\Tests.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\libs\aicorelib\aicorelib.vcxproj">
-      <Project>{be82e90d-36e4-42f0-8583-7464d70ec985}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\libs\aitemplatelib\aitemplatelib.vcxproj">
+    <ProjectReference Include="..\aitemplatelib\aitemplatelib.vcxproj">
       <Project>{9b147f91-8f20-4e37-9fb7-344d1ef9272a}</Project>
     </ProjectReference>
   </ItemGroup>

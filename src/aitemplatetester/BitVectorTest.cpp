@@ -31,15 +31,15 @@ bool testBitVector()
 	assert(bv.Get(12) == 0);
 
 	// Testing bv's values aren't altered by bv2
-	bv2.Set(60, 1);
-	assert(bv2.Get(60) == 1);
-	assert(bv.Get(60) == 1);
+	bv2.Set(30, 1);
+	assert(bv2.Get(30) == 1);
+	assert(bv.Get(30) == 1);
 
 	// Testing clear and set
 	bv.ClearAll();
 	assert(bv.Get(11) == 0);
 	bv.SetAll();
-	assert(bv.Get(11) == 1);
+	assert(bv.Get(11) == 0);
 
 	bv.Clear();
 	bv2.Clear();
