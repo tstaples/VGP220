@@ -10,10 +10,6 @@
 build/*
 bin/*
 
-# Output and intermediate paths
-bin/*
-build/*
-
 # MSTest test Results
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*

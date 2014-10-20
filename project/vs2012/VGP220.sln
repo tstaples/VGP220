@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AiTemplateDriver", "AiTemplateDriver\AiTemplateDriver.vcxproj", "{3FBBAFB7-BC85-4019-B7AC-50A960646C80}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "aitemplatelib", "aitemplatelib\aitemplatelib.vcxproj", "{9B147F91-8F20-4E37-9FB7-344D1EF9272A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3FBBAFB7-BC85-4019-B7AC-50A960646C80}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3FBBAFB7-BC85-4019-B7AC-50A960646C80}.Debug|Win32.Build.0 = Debug|Win32
+		{3FBBAFB7-BC85-4019-B7AC-50A960646C80}.Release|Win32.ActiveCfg = Release|Win32
+		{3FBBAFB7-BC85-4019-B7AC-50A960646C80}.Release|Win32.Build.0 = Release|Win32
+		{9B147F91-8F20-4E37-9FB7-344D1EF9272A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9B147F91-8F20-4E37-9FB7-344D1EF9272A}.Debug|Win32.Build.0 = Debug|Win32
+		{9B147F91-8F20-4E37-9FB7-344D1EF9272A}.Release|Win32.ActiveCfg = Release|Win32
+		{9B147F91-8F20-4E37-9FB7-344D1EF9272A}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
